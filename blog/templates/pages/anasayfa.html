@@ -12,7 +12,11 @@
     </div>
     <div class="col-md-8">
       <div class="card-body">
-        <h5 class="card-title">{{ yazi.baslik }}</h5>
+        <h5 class="card-title">
+          <a href="{% url 'detay' slug=yazi.slug %}">
+            {{ yazi.baslik }}
+          </a>
+        </h5>
         <p class="card-text">{{ yazi.icerik|safe|truncatechars_html:150}}</p>
         <p class="card-text"><small class="text-muted">Önce Paylaşıldı: {{ yazi.duzenlenme_tarihi|timesince }}</small></p>
       </div>
