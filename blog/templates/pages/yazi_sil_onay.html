@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title%} Silmek istediğinizi emin misiniz? {% endblock%}
+
+{% block content %}
+    <form method="POST">
+        {% csrf_token %}
+        <p>Silmek istediğinizden emin misiniz?</p>
+        <input type="submit" class="btn btn-danger mt-3 mb-3" value="Evet" />
+    </form>
+{% endblock %}
