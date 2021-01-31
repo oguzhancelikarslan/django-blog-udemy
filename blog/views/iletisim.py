@@ -14,4 +14,5 @@ def iletisim(request):
     context = {
         'form': form
     }
+    
     return render(request, 'pages/iletisim.html', context=context)
