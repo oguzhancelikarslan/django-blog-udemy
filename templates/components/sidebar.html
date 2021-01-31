@@ -4,27 +4,24 @@
       <div class="card-header">
         Menü
       </div>
-    {% if request.user.is_authenticated %}
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item">
-        Profil Düzenle
-      </li>
-      <li class="list-group-item">
-        <a href="{% url 'sifre-degistir' %}">Şifre Değiştir</a>
-      </li>
-      <li class="list-group-item">
-        <a href="{% url 'yazi-ekle' %}">Yazi Ekle</a>
-      </li>
-      <li class="list-group-item">
-       <a href="{% url 'yazilarim' %}">Yazılarım</a>
-      </li>
-      <li class="list-group-item">
-        <a href="{% url 'cikis' %}">Çıkış</a>
-      </li>
-    </ul>
-    {% else%}
-    Login formu gelecek
-    {% endif %}
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          <a href="{% url 'profil-guncelle' %}">Profil Düzenle</a>
+        </li>
+        <li class="list-group-item">
+          <a href="{% url 'sifre-degistir' %}">Şifre Değiştir</a>
+        </li>
+        <li class="list-group-item">
+          <a href="{% url 'yazi-ekle' %}">Yazi Ekle</a>
+        </li>
+        <li class="list-group-item">
+        <a href="{% url 'yazilarim' %}">Yazılarım</a>
+        </li>
+        <li class="list-group-item">
+          <a href="{% url 'cikis' %}">Çıkış</a>
+        </li>
+      </ul>
+   
     </div>
 
 </div>
