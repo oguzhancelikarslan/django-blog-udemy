@@ -42,6 +42,8 @@
   <p>Yorum yapmak için lütfen üye giriş yapınız.</p>
 {%endif%}
 
+{% include 'components/message.html' %}
+
 {% for yorum in yorumlar %}
   <div class="card">
     <div class="card-body" style="display:flex;flex-direction: row;">
