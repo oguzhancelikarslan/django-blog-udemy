@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block title%} {{ yazi.baslik }} {% endblock%}
+{% load crispy_forms_tags %}
 
 {% block content %}
 
@@ -31,6 +32,16 @@
 
 <h5>Yorumlar</h5>
 
+{% if request.user.is_authenticated %}
+  <form method="POST">
+    {% csrf_token %}
+    {{ yorum_ekle_form|crispy }}
+    <input type="submit" value="Yorum Yap" class="btn btn-danger mt-3 mb-3" />
+  </form>
+{%else%}
+  <p>Yorum yapmak için lütfen üye giriş yapınız.</p>
+{%endif%}
+
 {% for yorum in yorumlar %}
   <div class="card">
     <div class="card-body" style="display:flex;flex-direction: row;">
@@ -46,6 +57,11 @@
         <p class="card-text">
           {{ yorum.yorum }}
         </p>
+        {% if request.user == yorum.yazan or request.user == yazi.yazar %}
+          <p>
+            <a class="btn btn-danger" href="{% url 'yorum-sil' id=yorum.id %}">Yorum Sil</a>
+          </p>
+        {% endif %}
       </div>
     </div>
   </div>
