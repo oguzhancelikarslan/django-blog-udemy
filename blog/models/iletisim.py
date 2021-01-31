@@ -1,6 +1,5 @@
 from django.db import models
 
-
 class IletisimModel(models.Model):
     email = models.EmailField(max_length=250)
     isim_soyisim = models.CharField(max_length=150)
