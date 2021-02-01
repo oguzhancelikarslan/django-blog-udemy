@@ -17,6 +17,8 @@
         <p class="card-text">
           <small class="text-muted">
           Önce Paylaşıldı: {{ yazi.duzenlenme_tarihi|timesince }}
+          <br>
+          Yazar : <a href="{% url 'profil' username=yazi.yazar.username %}"> {{ yazi.yazar.username }}</a>
         </small>
          {% if request.user == yazi.yazar %}
           <p>
