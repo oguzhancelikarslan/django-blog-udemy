@@ -10,6 +10,9 @@ pillow = "*"
 django-ckeditor = "*"
 django-crispy-forms = "*"
 django-environ = "*"
+sentry-sdk = "*"
+boto3 = "*"
+django-storages = "*"
 
 [dev-packages]
 
