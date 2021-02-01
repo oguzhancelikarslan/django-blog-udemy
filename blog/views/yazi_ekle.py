@@ -3,9 +3,11 @@ from blog.forms import YaziEkleModelForm
 from django.contrib.auth.decorators import login_required
 from django.views.generic import CreateView
 from blog.models import YazilarModel
-from django.urls import reverse
+from django.urls import reverse, reverse_lazy
+from django.contrib.auth.mixins import LoginRequiredMixin
 
-class YaziEkleCreateView(CreateView):
+class YaziEkleCreateView(LoginRequiredMixin, CreateView):
+    login_url = reverse_lazy('giris')
     template_name = 'pages/yazi-ekle.html'
     model = YazilarModel
     fields = ('baslik', 'icerik', 'resim', 'kategoriler')
