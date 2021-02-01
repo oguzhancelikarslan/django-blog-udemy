@@ -6,3 +6,4 @@ yazi_resimleri
 media
 .env
 prod.sqlite3
+logs
